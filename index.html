@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API de Rick and Morty</title>
-    <link rel="stylesheet" href="Css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personagens Rick and Morty</title>
+  <link rel="stylesheet" href="Css/style.css">
+  <link rel="shortcut icon" href="favicons/favicon-16x16.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <h1>Galeria de Rick and Morty</h1>
-        
-        <div class="filter-container">
-            <label for="filter">Filtrar por Nome:</label>
-            <input type="text" id="filter" placeholder="Exemplo: Rick">
-            <button id="filter-btn">Filtrar</button>
-            <button id="limpar-btn">Limpar</button>
-        </div>
-        
-        <div id="image-container" class="image-container"></div>
-        
-        <h2>Favoritos</h2>
-        <div class="favorites-buttons">
-            <button id="favoritos-btn">Mostrar Favoritos</button>
-            <button id="limpar-favoritos-btn">Limpar Favoritos</button>
-        </div>
-        <div id="favorites-container" class="favorites-container"></div>
-    </div>
+  <h1>Personagens Rick and Morty</h1>
+
+  <label for="character-select">Selecione um personagem:</label>
+  <select id="character-select">
+    <option value="">Todos os personagens</option>
+  </select>
+  <button id="filter-btn">Filtrar</button>
+  <button id="limpar-btn">Limpar Filtro</button>
+  <h2>Personagens</h2>
+
+  <div id="image-container" class="image-container"></div>
+
+  
+  <h2>Favoritos</h2>
+  <div id="favorites-container"></div>
+  <button id="favoritos-btn">Exibir Favoritos</button>
+  <button id="limpar-favoritos-btn">Limpar Favoritos</button>
+
 
     <script src="Js/main.js"></script>
 </body>
