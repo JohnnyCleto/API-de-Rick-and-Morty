@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let characters = [];
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let page = 1;
-  
+  
+
     async function buscarPersonagens(pageNum = 1) {
       const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${pageNum}`);
       const data = await response.json();
@@ -40,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         imageContainer.innerHTML = '<p>Nenhum personagem encontrado.</p>';
       }
     }
-  
+  
+
     function displayCharacters(images) {
       imageContainer.innerHTML = ''; 
       if (images.length > 0) {
@@ -58,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             addToFavorites(character);
             alert(`${character.name} foi adicionado aos favoritos!`);
           };
-  
+  
+
           item.onclick = () => alert(`Detalhes do personagem:\nNome: ${character.name}\nStatus: ${character.status}\nEspécie: ${character.species}`);
   
           imageContainer.appendChild(item);
@@ -74,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('favorites', JSON.stringify(favorites));
       }
     }
-  
+  
+
     favoritosBtn.onclick = () => {
       if (favorites.length > 0) {
         favoritesContainer.innerHTML = favorites.map(fav => `<img src="${fav.image}" alt="${fav.name}" class="favorite">`).join('');
@@ -82,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         favoritesContainer.innerHTML = '<p>Nenhum favorito encontrado.</p>';
       }
     };
-  
+  
+
     limparFavoritosBtn.onclick = () => {
       favorites = [];
       localStorage.removeItem('favorites');
@@ -99,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCharacters(characters); 
       }
     };
-  
+  
+
     limparBtn.onclick = () => {
       characterSelect.value = ''; 
       imageContainer.innerHTML = ''; 
@@ -111,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     
     window.onscroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !characterSelect.value) {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10 && !characterSelect.value) {
         page++;
         buscarPersonagens(page); 
       }
